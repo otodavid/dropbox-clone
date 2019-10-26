@@ -24,7 +24,7 @@ section {
 }
 
 #land-page {
-    background: #b8d3e6 url(../img/bg-home.jpg) bottom right / 700px no-repeat;
+    background: #b8d3e6 url(../img/bg-home.jpg) bottom right / 750px no-repeat;
     height: 100vh;
 }
 
@@ -684,15 +684,19 @@ span.fa-facebook-f:hover {
 @media (max-width: 1024px) and (min-width: 768px) {
     #land-page {
         height: 70vh;
-        background: #b8d3e6 url(../img/bg-home.jpg) bottom right / 900px no-repeat;
+        background: #b8d3e6 url(../img/bg-home.jpg) bottom right / 850px no-repeat;
     }
 
     .menu {
         width: 60%;
     }
 
+    #land-page .main-content {
+        padding: 9%;
+    }
+
     .main-content {
-        padding: 5%;
+        padding: 4%;
     }
 
     .intro {
@@ -701,6 +705,10 @@ span.fa-facebook-f:hover {
 
     .overview, #detailed-view {
         grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+    }
+
+    .feature-icons div {
+        flex: 1 0 262px;
     }
 }
 
