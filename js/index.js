@@ -8,14 +8,14 @@ let standardPrice = document.querySelector(".stnd");
 let advancedPrice = document.querySelector(".advd");
 let enterprisePrice = document.querySelector(".entr");
 
-// code for fixed navbar on scroll
+// code for sticky navbar on scroll
 window.onscroll = function () {
     scrollFunction()
 };
 
 function scrollFunction() {
-    navBar = document.getElementById("navbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    navBar = document.querySelector("header");
+    if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
         navBar.style.background = "white";
         navBar.style.boxShadow = "1px 1px 5px rgba(0, 0, 0, 0.3)"
     } else {
@@ -59,4 +59,26 @@ function toggleItem() {
 
 accHd.forEach(item => {
     item.addEventListener('click', toggleItem, false);
+});
+
+const hamburger = document.querySelector(".mobile-menu");
+const navLinks = document.querySelector(".menu");
+const links = document.querySelectorAll(".menu li");
+const list = document.querySelectorAll(".menu li");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+  links.forEach(link => {
+    link.classList.toggle("fade");
+  });
+});
+
+
+
+list.forEach(link => {
+    link.addEventListener("click", () => {
+        if (navLinks.classList.contains("open")) {
+            navLinks.classList.remove("open");
+        }
+    })
 })

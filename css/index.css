@@ -10,6 +10,14 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    width: 100%;
+}
+
+.container {
+    position: relative;
+}
+
 a {
     text-decoration: none;
     display: inline-block;
@@ -17,15 +25,13 @@ a {
     color: #444;
 }
 
-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    background-color: #fff;
-}
-
-#land-page {
-    background: #b8d3e6 url(../img/bg-home.jpg) bottom right / 750px no-repeat;
-    height: 100vh;
+header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #b8d3e6;
+    display: flex;
+    height: 10vh;
 }
 
 nav {
@@ -33,10 +39,6 @@ nav {
     align-items: flex-end;
     padding: 10px 20px;
     width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 5;
-    background-color: #b8d3e6 ;
 }
 
 .logo {
@@ -68,14 +70,13 @@ ul {
 
 .menu li {
     position: relative;
-    
 }
 
-.menu li:hover > a {
+.menu li:hover>a {
     color: #000;
 }
 
-.menu li a{
+.menu li a {
     width: 100%;
     padding: 8px 10px;
     font-weight: 500;
@@ -90,7 +91,7 @@ ul {
     color: #000;
 }
 
-.list:hover .extend{
+.list:hover .extend {
     height: auto;
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -112,6 +113,21 @@ ul {
 
 .extend li a {
     text-align: left;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #fff;
+}
+
+#land-page {
+    background: #b8d3e6 url(../img/bg-home.jpg) bottom right / 750px no-repeat;
+    height: 100vh;
 }
 
 .main-content {
@@ -150,7 +166,7 @@ ul {
     background-color: #0055b1;
 }
 
-.try-button ~ span {
+.try-button~span {
     font-weight: 600;
 }
 
@@ -162,7 +178,7 @@ ul {
     text-decoration: underline;
 }
 
-.try-button ~ span:last-of-type {
+.try-button~span:last-of-type {
     text-align: center;
     display: inline-block;
     width: 200px;
@@ -170,22 +186,23 @@ ul {
 }
 
 .news {
-   padding: 1%;
-   text-align: center;
-   background-color: #f5f5f5;
+    padding: 1%;
+    background-color: #f6f9fc;
+    width: 100%;
 }
 
 .news p {
     font-size: 20px;
-    padding: 1% 5%;
+    padding: 1% 3%;
+    text-align: center;
 }
 
 .news a {
-    width: 170px;
+    width: max-content;
     font-size: 16px;
     border-radius: 8px;
-    padding: 7px 14px;
-    margin: 0 auto;
+    padding: 8px 14px;
+    margin: 1% auto;
     font-weight: 500;
     background-color: #007bff;
     color: whitesmoke;
@@ -203,7 +220,7 @@ ul {
 }
 
 .subscription div {
-    width: 30%;
+    width: 80%;
     margin: 0 auto;
     text-align: center
 }
@@ -216,7 +233,8 @@ ul {
     color: #212529;
 }
 
-.overview, #detailed-view {
+.overview,
+#detailed-view {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -263,7 +281,7 @@ ul {
     border: 1px solid transparent;
 }
 
-.price > div {
+.price>div {
     padding: 5%;
     border-right: 1px solid #dadce0;
     border-left: 1px solid #dadce0;
@@ -282,11 +300,11 @@ ul {
     margin-bottom: 10%;
 }
 
-.content > div {
+.content>div {
     line-height: 25px;
 }
 
-.content > div > div {
+.content>div>div {
     display: flex;
 
 }
@@ -295,12 +313,12 @@ ul {
     margin-right: 4%;
 }
 
-.plans .button-wrap{
+.plans .button-wrap {
     width: 100%;
     border-bottom: 1px solid #dadce0;
     border-radius: 0 0 8px 8px;
     margin-bottom: -10px;
-} 
+}
 
 .button-wrap .try-button {
     width: 90%;
@@ -438,10 +456,14 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-flow: column;
 }
 
-.florida, .under, .macmillan, .hyatt, .newscorps {
+.florida,
+.under,
+.macmillan,
+.hyatt,
+.newscorps {
     grid-column: span 1;
     grid-row: span 1;
 }
@@ -456,22 +478,18 @@ ul {
     background-color: #E13A2B;
 }
 
-.ng {
+.customers .ng {
     grid-column: 2/3;
     grid-row: span 2;
     background: url(../img/national-geographic@2x-vfl1CrStc.jpg) 0% / 100% 100% no-repeat;
-}
-
-.ng img {
-    align-self: flex-start;
-    margin-top: 30%;
+    justify-content: flex-start;
+    padding-top: 25%;
 }
 
 .kayak {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-column: 3/5;
+    grid-row: 1/3;
     background-color: #FAE8D3;
-    flex-flow: row wrap;
     padding: 15% 0%;
 }
 
@@ -480,7 +498,7 @@ ul {
     margin-bottom: 5%;
 }
 
-.customers .kayak div > img {
+.customers .kayak div>img {
     width: 90%;
     display: block;
     margin: 0 auto;
@@ -512,7 +530,7 @@ ul {
     background-color: #000;
 }
 
-.customers div > img {
+.customers div>img {
     width: 70%;
 }
 
@@ -568,7 +586,7 @@ ul {
     width: 100%;
     transform: scaleY(1);
     transform-origin: top;
-    transition:  all 0.4s ease;
+    transition: all 0.4s ease;
     background-color: rgba(188, 234, 252, 0.212);
     line-height: 20px;
 }
@@ -598,7 +616,7 @@ ul {
     font-size: 1.8rem;
 }
 
-#ad .main-content > div {
+#ad .main-content>div {
     text-align: center;
     margin-bottom: 2%;
 }
@@ -606,7 +624,7 @@ ul {
 footer nav {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
-    gap: 7px;
+    gap: 1%;
     justify-items: center;
     align-items: baseline;
     padding-bottom: 60px;
@@ -621,9 +639,9 @@ footer nav h4 {
     font-size: 1.25rem;
 }
 
-footer nav a{
+footer nav a {
     font-size: 1.25rem;
-    color: rgb(128,128,128);
+    color: rgb(128, 128, 128);
     font-weight: 100;
     line-height: 30px;
 }
@@ -703,7 +721,8 @@ span.fa-facebook-f:hover {
         margin-top: 10%;
     }
 
-    .overview, #detailed-view {
+    .overview,
+    #detailed-view {
         grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
     }
 
@@ -712,5 +731,184 @@ span.fa-facebook-f:hover {
     }
 }
 
+@media screen and (max-width: 767px) {
+    .logo {
+        align-self: center;
+    }
+    .logo img:first-of-type {
+        width: 20px;
+    }
 
-/* #1a73e8 */
+    .logo img:last-of-type {
+        width: 150px;
+    }
+
+    header {
+        /* position: relative; */
+        width: 100%;
+        height: 8vh;
+        z-index: 3;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgb(253, 198, 198);
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0);
+    }
+
+    .menu.open {
+        transform: scale(1);
+    }
+
+    .menu.close {
+        transform: scale(0);
+    }
+
+    .menu li {
+        width: 100%;
+        line-height: 50px;
+    }
+
+    .menu .list .extend{
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 25%;
+        right: 5%;
+        cursor: pointer;
+        z-index: 6;
+    }
+
+    #land-page {
+        background-image: none;
+        height: 70vh;
+    }
+
+    .intro {
+        width: 100%;
+        padding: 8% 0;
+        row-gap: 10%;
+    }
+
+    .intro p {
+        font-size: 22px;
+        width: 100%;
+    }
+
+    .intro .buy-button {
+        margin: 2% 0 0 5%;
+        font-size: 1.1em;
+    }
+
+    .try-button~span:last-of-type {
+        margin-top: 5%;
+    }
+
+    .news p {
+        font-size: 16px;
+    }
+
+    .news a {
+        margin: 3% auto;
+    }
+
+    #pricing {
+        padding-top: 6vh;
+    }
+
+    #detailed-view {
+        padding-top: 8vh;
+        margin-top: 0;
+    }
+    
+    #detailed-view .details {
+        border-bottom: none;
+        border-right: none;
+        padding: 1%;
+    }
+
+    .details:first-of-type ul::before {
+        content: 'Standard';
+        font-size: 1.2em;
+    }
+
+    .details:nth-of-type(2) ul::before {
+        content: 'Advanced';
+        font-size: 1.2em;
+    }
+
+    .details:last-of-type ul::before {
+        content: 'Enterprise';
+        font-size: 1.2em;
+    }
+
+    #features {
+        padding-top: 7vh;
+    }
+
+    #features p:last-of-type {
+        margin-top: 2%;
+        width: 100%;
+        padding: 1%;
+    }
+
+    .consumers-team h3 {
+        width: 100%;
+    }
+
+    .customers {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
+    }
+
+    .customers > div {
+        padding: 10% 5%;
+    }
+
+    .customers img {
+        width: 50%;
+    }
+
+    .kayak {
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+
+    .kayak p {
+        width: 100%;
+    }
+
+    footer nav {
+        padding: 0;
+        padding-bottom: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
+    }
+
+    footer nav h4 {
+        font-size: 14px;
+    }
+
+    footer nav ul {
+        display: none;
+    }
+
+    
+
+
+
+
+}
+
+
+#1a73e8
