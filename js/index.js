@@ -24,6 +24,7 @@ function scrollFunction() {
     }
 }
 
+
 // code for pricing section
 function changeYearlyPrice() {
     if (yearlyPrice.checked) {
@@ -46,15 +47,25 @@ changeMonthlyPrice();
 yearlyPrice.addEventListener("click", changeYearlyPrice);
 monthlyPrice.addEventListener("click", changeMonthlyPrice);
 
+
 // code for fao section - accordion
+let test = document.querySelectorAll(".accordionHeading span");
+test.forEach(test => {
+    test.textContent = "\u002b";
+});
+
 function toggleItem() {
+    console.log(this);
     var itemClass = this.parentNode.className;
     accItem.forEach(item => {
         item.className = 'accordionItem close';
     });
     if (itemClass == 'accordionItem close') {
         this.parentNode.className = 'accordionItem open';
-    }
+        this.lastElementChild.textContent = "\u2212";
+    } else {
+        this.lastElementChild.textContent = "\u002b";
+    }  
 }
 
 accHd.forEach(item => {

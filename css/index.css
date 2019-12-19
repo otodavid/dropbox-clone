@@ -32,12 +32,12 @@ header {
     background-color: #b8d3e6;
     display: flex;
     height: 10vh;
+    line-height: 10vh;
 }
 
 nav {
     display: flex;
-    align-items: flex-end;
-    padding: 10px 20px;
+    padding: 0 20px;
     width: 100%;
 }
 
@@ -63,7 +63,7 @@ ul {
 
 .menu {
     display: flex;
-    padding: 1px 20px;
+    padding: 0px 20px;
     width: 50%;
     justify-content: space-around;
 }
@@ -78,12 +78,10 @@ ul {
 
 .menu li a {
     width: 100%;
-    padding: 8px 10px;
     font-weight: 500;
     margin-left: 5px;
     font-size: 16px;
     text-align: center;
-    padding-bottom: 15px;
     color: rgba(68, 68, 68, 0.644);
 }
 
@@ -94,6 +92,7 @@ ul {
 .list:hover .extend {
     height: auto;
     border: 1px solid rgba(0, 0, 0, 0.3);
+    line-height: 1px;
 }
 
 .extend {
@@ -113,6 +112,7 @@ ul {
 
 .extend li a {
     text-align: left;
+    padding: 20px 14px;
 }
 
 .mobile-menu {
@@ -215,8 +215,8 @@ section {
 .subscription h4 {
     text-align: center;
     font-weight: 500;
-    line-height: 30px;
     font-size: 1.2rem;
+    margin-bottom: 5px;
 }
 
 .subscription div {
@@ -452,7 +452,7 @@ section {
     grid-template-rows: repeat(2, 1fr);
 }
 
-.customers > div {
+.customers>div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -558,20 +558,13 @@ section {
     font-weight: 400;
     color: #7b8994;
     padding: 4%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.close .accordionHeading::after {
-    content: '+';
+.accordionHeading span {
     font-size: 20px;
-    font-weight: 500;
-    float: right;
-}
-
-.open .accordionHeading::after {
-    content: '-';
-    font-size: 20px;
-    font-weight: 500;
-    float: right;
+    font-weight: 900;
 }
 
 .close .accordionContent {
@@ -699,6 +692,15 @@ span.fa-facebook-f:hover {
     border-radius: 4px;
 }
 
+@media (min-width: 1025px) {
+    .overview,
+    #detailed-view {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    }
+}
+
 @media (max-width: 1024px) and (min-width: 768px) {
     #land-page {
         height: 70vh;
@@ -735,6 +737,7 @@ span.fa-facebook-f:hover {
     .logo {
         align-self: center;
     }
+
     .logo img:first-of-type {
         width: 20px;
     }
@@ -777,7 +780,7 @@ span.fa-facebook-f:hover {
         line-height: 50px;
     }
 
-    .menu .list .extend{
+    .menu .list .extend {
         display: none;
     }
 
@@ -831,7 +834,7 @@ span.fa-facebook-f:hover {
         padding-top: 8vh;
         margin-top: 0;
     }
-    
+
     #detailed-view .details {
         border-bottom: none;
         border-right: none;
@@ -872,7 +875,7 @@ span.fa-facebook-f:hover {
         grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
     }
 
-    .customers > div {
+    .customers>div {
         padding: 10% 5%;
     }
 
@@ -892,7 +895,7 @@ span.fa-facebook-f:hover {
     footer nav {
         padding: 0;
         padding-bottom: 10px;
-        grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
     }
 
     footer nav h4 {
@@ -902,8 +905,6 @@ span.fa-facebook-f:hover {
     footer nav ul {
         display: none;
     }
-
-    
 
 
 
