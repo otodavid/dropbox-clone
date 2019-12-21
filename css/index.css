@@ -12,6 +12,7 @@ html {
 
 body {
     width: 100%;
+    overflow-x: hidden;
 }
 
 .container {
@@ -37,6 +38,8 @@ header {
 
 nav {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     padding: 0 20px;
     width: 100%;
 }
@@ -117,6 +120,13 @@ ul {
 
 .mobile-menu {
     display: none;
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin-bottom: 7px;
 }
 
 section {
@@ -747,7 +757,6 @@ span.fa-facebook-f:hover {
     }
 
     header {
-        /* position: relative; */
         width: 100%;
         height: 8vh;
         z-index: 3;
@@ -756,41 +765,77 @@ span.fa-facebook-f:hover {
     .menu {
         position: fixed;
         top: 0;
-        left: 0;
-        background: rgb(253, 198, 198);
+        right: 0%;
+        background: rgb(37, 142, 247);
         height: 100vh;
-        width: 100%;
+        width: 60%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        transform: scale(0);
+        justify-content: flex-start;
+        padding-top: 15%;
+        transform: translateX(100%);
+        transition: transform .3s ease;
     }
 
     .menu.open {
-        transform: scale(1);
-    }
-
-    .menu.close {
-        transform: scale(0);
+        transform: translateX(0);
     }
 
     .menu li {
         width: 100%;
-        line-height: 50px;
+        line-height: 60px;
+        opacity: 0;         
+    }
+
+    @keyframes effect {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
     }
 
     .menu .list .extend {
         display: none;
     }
 
+    .menu li a {
+        color: rgb(252, 250, 250);
+    }
+
+    .menu.shade {
+        
+    }
+
     .mobile-menu {
-        display: block;
-        position: absolute;
-        top: 25%;
-        right: 5%;
-        cursor: pointer;
-        z-index: 6;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .line {
+        transition: all .5s ease;
+        z-index: 1;
+    }
+
+    .toggle .line {
+        background-color: #fff;
+        transform-origin: center;
+    }
+
+    .toggle .line1 {
+        transform: translateY(10px) rotate(-45deg);
+    }
+
+    .toggle .line2 {
+        transform: rotateY(90deg);
+    }
+
+    .toggle .line3 {
+        transform: translateY(-10px) rotate(45deg);
     }
 
     #land-page {

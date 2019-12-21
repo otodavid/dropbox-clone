@@ -65,7 +65,7 @@ function toggleItem() {
         this.lastElementChild.textContent = "\u2212";
     } else {
         this.lastElementChild.textContent = "\u002b";
-    }  
+    }
 }
 
 accHd.forEach(item => {
@@ -74,22 +74,24 @@ accHd.forEach(item => {
 
 const hamburger = document.querySelector(".mobile-menu");
 const navLinks = document.querySelector(".menu");
-const links = document.querySelectorAll(".menu li");
-const list = document.querySelectorAll(".menu li");
+const links = document.querySelectorAll(".menu > li");
+const list = document.querySelectorAll(".menu > li");
 
 hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-  links.forEach(link => {
-    link.classList.toggle("fade");
-  });
-});
+    // Toggle Menu
+    navLinks.classList.toggle("open");
 
-
-
-list.forEach(link => {
-    link.addEventListener("click", () => {
-        if (navLinks.classList.contains("open")) {
-            navLinks.classList.remove("open");
+    // Animate Links
+    links.forEach((link, index) => {
+        if(link.style.animation) {
+            link.style.animation = '';
+        } else  {
+            link.style.animation =  `effect .5s ease-in ${index / 7 + 0.1}s forwards`; 
+            //the + 0.1s adds an initial delay to the animation
         }
-    })
-})
+    });
+
+    // Animate button
+    hamburger.classList.toggle("toggle");
+
+});
